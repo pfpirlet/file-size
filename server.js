@@ -10,7 +10,7 @@ app.get("/", function(req, res) {
 });
 
 app.post('/upload', upload.single('uploadedFile'), function (req, res, next) {
-  console.log(req.file.size);
+  res.send({ size: req.file.size });
 })
 
 app.listen(port, function() {
